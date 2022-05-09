@@ -65,12 +65,14 @@ function randomColor() {
 
 const sidebutton = document.getElementById("sidebutton");
 sidebutton.addEventListener("click", function(){
-    let sides = prompt("Enter number of sides (Max 100): ", 16);
-    if (sides > 100 || isNaN(sides)) {
+    const sideSlider = document.getElementById("sideslider");
+    const slideValue = sideSlider.value;
+    //let sides = prompt("Enter number of sides (Max 100): ", 16);
+    if (slideValue > 100 || isNaN(slideValue)) {
         sides = 16;
     }
     clearGrid();
-    setGrid(sides);
+    setGrid(slideValue);
 });
 
 const rainbowbutton = document.getElementById("rainbow");
