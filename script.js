@@ -1,7 +1,12 @@
-document.addEventListener('DOMContentLoaded', function (){
-    const grid = document.getElementById("grid");
 
-    for (i = 0; i < 256; i++) {
+
+document.addEventListener('DOMContentLoaded', function (){
+
+
+    const grid = document.getElementById("grid");
+    let sideNum = 20;
+    document.documentElement.style.setProperty("--sideNum", sideNum);
+    for (i = 0; i < sideNum * sideNum; i++) {
     const box = document.createElement('div');
     box.setAttribute("class", "box");
     box.setAttribute("id","box" + i);
