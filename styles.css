@@ -1,0 +1,23 @@
+#grid {
+    display:grid;
+    border: 10px;
+    border-color: red;
+    padding: 0px;
+    height: 800px;
+    width: 800px;
+    grid-template-columns: repeat(16, 1fr);
+
+}
+
+.box {
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+    border-color: grey;
+
+
+}
+
+.boxblack {
+
+    background-color: blue;
+}
