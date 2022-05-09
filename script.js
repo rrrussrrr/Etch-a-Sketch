@@ -21,7 +21,8 @@ function setGrid(sideSize) {
 // Intialize default parameters for grid
 document.addEventListener('DOMContentLoaded', function (){
     const grid = document.getElementById("grid");
-    grid.setAttribute("class", "blackmode");
+    grid.classList.add("blackmode");
+    //grid.setAttribute("class", "blackmode");
     clearGrid();
     setGrid(16);
 });
@@ -55,7 +56,19 @@ sidebutton.addEventListener("click", function(){
     }
     clearGrid();
     setGrid(sides);
+});
 
+const rainbowbutton = document.getElementById("rainbow");
+rainbowbutton.addEventListener("click", function() {
+    const grid = document.getElementById("grid");
+    grid.className = "rainbowmode";
+
+});
+
+const blackbutton = document.getElementById("black");
+blackbutton.addEventListener("click", function() {
+    const grid = document.getElementById("grid");
+    grid.className = "blackmode";
 
 });
 
