@@ -1,37 +1,43 @@
+function clearGrid() {
+    const grid = document.getElementById("grid");
+    while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+}
 
-
-document.addEventListener('DOMContentLoaded', function (){
-
+function setGrid(sideSize) {
 
     const grid = document.getElementById("grid");
-    let sideNum = 20;
-    document.documentElement.style.setProperty("--sideNum", sideNum);
-    for (i = 0; i < sideNum * sideNum; i++) {
+    document.documentElement.style.setProperty("--sideNum", sideSize);
+    for (i = 0; i < sideSize * sideSize; i++) {
     const box = document.createElement('div');
     box.setAttribute("class", "box");
     box.setAttribute("id","box" + i);
     //box.textContent = "h";
     grid.appendChild(box);
     }
+}
 
-
+document.addEventListener('DOMContentLoaded', function (){
+    clearGrid();
+    setGrid(16);
 });
 
 document.addEventListener('mouseover', function(e){
     if (e.target.classList.contains("box")) {
-        //var currentBox = e.currentTarget.id;
-        //currentBox.className += " " + "boxblack";
         e.target.classList.add("boxblack");
     }
 
 
 });
 
-//const boxes = document.querySelectorAll("box");
-//boxes.forEach( cell => {
-//    cell.addEventListener('click', function(e){
-//        const currentBox = e.currentTarget.id;
-//        currentBox.setAttribute("class", "boxblack");
-//        });
-//});
+const sidebutton = document.getElementById("sidebutton");
+sidebutton.addEventListener("click", function(){
+    let sides = prompt("Enter number of sides: ", 16);
+    clearGrid();
+    setGrid(sides);
+
+
+});
+
 
