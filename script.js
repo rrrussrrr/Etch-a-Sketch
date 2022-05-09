@@ -30,14 +30,29 @@ document.addEventListener('DOMContentLoaded', function (){
 document.addEventListener('mouseover', function(e){
     if (e.target.classList.contains("box")) {
         const grid = document.getElementById("grid");
-        if (grid.classList.contains("blackmode")) {
-           // e.target.classList.add("boxblack");  
-             e.target.style.backgroundColor = 'black';
-        } else if (grid.classList.contains("rainbowmode")) {
-            e.target.style.backgroundColor = randomColor();   
+        if (grid.classList.contains("brushon")){
+         if (grid.classList.contains("blackmode")) {
+            e.target.style.backgroundColor = 'black';
+        }   else if (grid.classList.contains("rainbowmode")) {
+             e.target.style.backgroundColor = randomColor();   
+         }
         }
         
     }
+});
+
+// toggle brush by clicking on a box
+document.addEventListener('click', function(e){
+    if (e.target.classList.contains("box")) {
+        const grid = document.getElementById("grid");
+        if (grid.classList.contains("brushon")) {
+            grid.classList.remove("brushon");
+        } else {
+            grid.classList.add("brushon");
+        }
+        
+    }
+});
 
 function randomColor() {
     var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
@@ -46,7 +61,7 @@ function randomColor() {
 
 
 
-});
+
 
 const sidebutton = document.getElementById("sidebutton");
 sidebutton.addEventListener("click", function(){
@@ -61,14 +76,16 @@ sidebutton.addEventListener("click", function(){
 const rainbowbutton = document.getElementById("rainbow");
 rainbowbutton.addEventListener("click", function() {
     const grid = document.getElementById("grid");
-    grid.className = "rainbowmode";
+    grid.classList.remove("blackmode")
+    grid.classList.add("rainbowmode");
 
 });
 
 const blackbutton = document.getElementById("black");
 blackbutton.addEventListener("click", function() {
     const grid = document.getElementById("grid");
-    grid.className = "blackmode";
+    grid.classList.remove("rainbowmode")
+    grid.classList.add("blackmode");
 
 });
 
