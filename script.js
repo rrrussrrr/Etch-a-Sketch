@@ -18,16 +18,32 @@ function setGrid(sideSize) {
     }
 }
 
+// Intialize default parameters for grid
 document.addEventListener('DOMContentLoaded', function (){
+    const grid = document.getElementById("grid");
+    grid.setAttribute("class", "blackmode");
     clearGrid();
     setGrid(16);
 });
 
 document.addEventListener('mouseover', function(e){
     if (e.target.classList.contains("box")) {
-        e.target.classList.add("boxblack");
+        const grid = document.getElementById("grid");
+        if (grid.classList.contains("blackmode")) {
+           // e.target.classList.add("boxblack");  
+             e.target.style.backgroundColor = 'black';
+        } else if (grid.classList.contains("rainbowmode")) {
+
+        }
         
     }
+
+function randomColor() {
+
+
+    
+}
+
 
 
 });
@@ -43,5 +59,7 @@ sidebutton.addEventListener("click", function(){
 
 
 });
+
+
 
 
