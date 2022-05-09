@@ -99,6 +99,14 @@ resetbutton.addEventListener("click", function() {
 
 });
 
+var sideSlider = document.getElementById("sideslider");
+var sliderValueDisplay = document.getElementById("sideValue");
+sliderValueDisplay.innerHTML = sideSlider.value;
+sideSlider.oninput = function() {
+    sliderValueDisplay.innerHTML = this.value;
+
+}
+
 
 
 
