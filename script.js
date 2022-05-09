@@ -33,15 +33,14 @@ document.addEventListener('mouseover', function(e){
            // e.target.classList.add("boxblack");  
              e.target.style.backgroundColor = 'black';
         } else if (grid.classList.contains("rainbowmode")) {
-
+            e.target.style.backgroundColor = randomColor();   
         }
         
     }
 
 function randomColor() {
-
-
-    
+    var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
 }
 
 
