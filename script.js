@@ -72,6 +72,16 @@ blackbutton.addEventListener("click", function() {
 
 });
 
+const resetbutton = document.getElementById("reset");
+resetbutton.addEventListener("click", function() {
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach(box => {
+        box.style.backgroundColor = 'white';
+    })
+
+
+});
+
 
 
 
