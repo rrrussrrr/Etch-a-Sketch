@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function (){
 document.addEventListener('mouseover', function(e){
     if (e.target.classList.contains("box")) {
         e.target.classList.add("boxblack");
+        
     }
 
 
@@ -33,7 +34,10 @@ document.addEventListener('mouseover', function(e){
 
 const sidebutton = document.getElementById("sidebutton");
 sidebutton.addEventListener("click", function(){
-    let sides = prompt("Enter number of sides: ", 16);
+    let sides = prompt("Enter number of sides (Max 100): ", 16);
+    if (sides > 100 || isNaN(sides)) {
+        sides = 16;
+    }
     clearGrid();
     setGrid(sides);
 
