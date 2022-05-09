@@ -13,6 +13,7 @@ function setGrid(sideSize) {
     const box = document.createElement('div');
     box.setAttribute("class", "box");
     box.setAttribute("id","box" + i);
+    box.style.backgroundColor = 'lightgrey';
     //box.textContent = "h";
     grid.appendChild(box);
     }
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function (){
     //grid.setAttribute("class", "blackmode");
     clearGrid();
     setGrid(16);
+
 });
 
 document.addEventListener('mouseover', function(e){
@@ -95,7 +97,7 @@ const resetbutton = document.getElementById("reset");
 resetbutton.addEventListener("click", function() {
     const boxes = document.querySelectorAll(".box");
     boxes.forEach(box => {
-        box.style.backgroundColor = 'white';
+        box.style.backgroundColor = 'lightgrey';
     })
 
 
